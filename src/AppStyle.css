@@ -1,0 +1,115 @@
+/** @format */
+body {
+  background-color: whitesmoke;
+}
+
+.wrapper {
+  display: flex;
+  /* background-color: aqua; */
+}
+
+.left-wrapper {
+  /* background-color: aquamarine;  */
+  position: relative;
+  width: 520px;
+  padding: 100px 100px;
+}
+
+.left-wrapper h1 {
+  min-width: 320px;
+}
+
+.left-wrapper #welcome-text {
+  display: block;
+  margin-top: 85px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.left-wrapper form {
+  margin-top: 45px;
+  /* background-color: beige; */
+}
+
+.left-wrapper form label {
+  display: block;
+  /* background-color: burlywood; */
+}
+
+.left-wrapper form input {
+  display: block;
+  /* background-color: blue; */
+}
+
+.left-wrapper form button {
+  display: block;
+  margin-top: 30px;
+  /* background-color: aquamarine; */
+}
+
+.left-wrapper label {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  /* color: #686868; */
+  background: transparent;
+}
+
+.left-wrapper input {
+  width: 100%;
+  height: 32px;
+  outline: none;
+  font-size: 16px;
+  line-height: 14px;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.form-outer {
+  flex-direction: column;
+  border-radius: 10px 10px 3px 3px;
+  margin-top: 2px;
+  box-shadow: none;
+  background: whitesmoke;
+  display: flex;
+  height: 60px;
+  padding-left: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.17);
+
+  filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  /* background: transparent; */
+}
+
+.left-wrapper form button {
+  margin-top: 50px;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background: lightskyblue;
+  color: white;
+  border-radius: 9px;
+  height: 55px;
+  padding: 0 25px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.right-wrapper {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+}
+
+.right-wrapper img {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 750px;
+}
