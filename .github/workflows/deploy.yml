@@ -1,0 +1,32 @@
+# @format
+
+name: Deploy
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build React Artifact
+        run: yarn build
+
+      - name: (GH_PAGES) Add CNAME
+        run: echo $GH_CNAME > ./build/CNAME
+        env:
+          GH_CNAME: ${{ secrets.GH_CNAME }}
+
+      - name: Push Site
+        uses: maxheld83/ghpages@v0.2.1
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          BUILD_DIR: ./build
