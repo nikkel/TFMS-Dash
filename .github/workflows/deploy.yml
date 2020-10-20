@@ -23,10 +23,10 @@ jobs:
       - name: (GH_PAGES) Route 404s, fixes router
         run: ln -s ./index.html ./build/404.html
 
-      - name: (GH_PAGES) Add CNAME
-        run: echo $GH_CNAME > ./build/CNAME
-        env:
-          GH_CNAME: ${{ secrets.GH_CNAME }}
+      # - name: (GH_PAGES) Add CNAME
+      #   run: echo $GH_CNAME > ./build/CNAME
+      #   env:
+      #     GH_CNAME: ${{ secrets.GH_CNAME }}
 
       - name: Push Site
         uses: maxheld83/ghpages@v0.2.1
