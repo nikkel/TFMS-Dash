@@ -5,7 +5,7 @@ name: Deploy
 on:
   push:
     branches:
-      - release
+      - main
 
 jobs:
   build-deploy:
@@ -19,6 +19,9 @@ jobs:
 
       - name: Build React Artifact
         run: yarn build
+
+      - name: (GH_PAGES) Route 404s, fixes router
+        run: ln -s ./index.html ./build/404.html
 
       - name: (GH_PAGES) Add CNAME
         run: echo $GH_CNAME > ./build/CNAME
