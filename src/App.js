@@ -24,7 +24,7 @@ function App() {
               <input
                 name='login-key'
                 type='text'
-                placeholder='Enter your Torn API Key'
+                placeholder='Enter your Torn API Key...'
               ></input>
             </div>
             <button type='submit'>Login.</button>
