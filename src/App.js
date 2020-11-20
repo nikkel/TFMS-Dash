@@ -7,31 +7,30 @@ import axios from 'axios';
 import logo from './sa-igloo-logo.png';
 import './App.css';
 import './AppStyle.css';
-
-const tornURL = 'https://api.torn.com/user/?selections=profile&key=';
+import api from 'torn-api';
 
 const App = () => {
   const [token, setToken] = useState([]);
 
   const getVerification = useCallback(async () => {
-    return await axios
-      .get(`${tornURL + token}`)
+    api.key(token);
+    return await api.user
+      .profile()
       .then((response) => {
-        // If returns an error
-        if ('error' in response.data) {
-          const res = response.data['error'];
+        console.log(response);
+        if ('error' in response) {
+          const res = response['error'];
           res['validToken'] = false;
           return res;
         }
 
-        // If return success
-        if (!('error' in response.data)) {
-          const res = response.data;
+        if (!('error' in response)) {
+          const res = response;
           res['validToken'] = true;
           return res;
         }
 
-        return response.data;
+        return response;
       })
       .catch((err) => {
         return;
@@ -42,7 +41,7 @@ const App = () => {
 
   const onTokenChange = useCallback((event) => {
     setToken(event.target.value);
-    console.log(`Token Set: ${event.target.value}}`);
+    console.log(`Token Set: ${event.target.value}`);
   });
 
   const onVerifyToken = useCallback(async (event) => {
