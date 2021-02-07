@@ -1,7 +1,6 @@
 /** @format */
 
-import React, { useCallback, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 // //eslint-disable-next-line
 // import logo from './logo.svg';
 import logo from './sa-igloo-logo.png';
@@ -12,7 +11,7 @@ import api from 'torn-api';
 const App = () => {
   const [token, setToken] = useState([]);
 
-  const getVerification = useCallback(async () => {
+  const getVerification = async () => {
     api.key(token);
     return await api.user
       .profile()
@@ -35,16 +34,16 @@ const App = () => {
       .catch((err) => {
         return;
       });
-  });
+  };
 
   useEffect(() => {});
 
-  const onTokenChange = useCallback((event) => {
+  const onTokenChange = (event) => {
     setToken(event.target.value);
     console.log(`Token Set: ${event.target.value}`);
-  });
+  };
 
-  const onVerifyToken = useCallback(async (event) => {
+  const onVerifyToken = async (event) => {
     event.preventDefault();
     const response = await getVerification();
     if (response['validToken'] === true) {
@@ -55,7 +54,7 @@ const App = () => {
     if (response['validToken'] === false) {
       alert(`Invalid token! - {TORN: ${response['error']}}`);
     }
-  });
+  };
 
   return (
     <div className='wrapper'>
