@@ -15,13 +15,30 @@ body {
   padding: 100px 100px;
 }
 
+@media screen and (max-width: 1000px) {
+  .left-wrapper {
+    padding: 1vh 3vw 100px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .left-wrapper {
+    padding: 5vh 5vw 0vh 3vw;
+  }
+
+  .left-wrapper form button{
+    display: block;
+    width: 100%;
+  }
+}
+
 .left-wrapper h1 {
-  min-width: 320px;
+  min-width: 300px;
 }
 
 .left-wrapper #welcome-text {
   display: block;
-  margin-top: 85px;
+  margin-top: 55px;
   font-size: 20px;
   font-weight: 600;
 }

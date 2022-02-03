@@ -3,7 +3,9 @@
 import React, { useEffect, useState } from 'react';
 // //eslint-disable-next-line
 // import logo from './logo.svg';
-import logo from './sa-igloo-logo.png';
+// import logo from './sa-igloo-logo.png';
+import logo from './logo.png';
+
 import './App.css';
 import './AppStyle.css';
 import api from 'torn-api';
